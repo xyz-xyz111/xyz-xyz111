@@ -13,8 +13,8 @@ LangGraph-based multi-agent pipeline for generating and refining Alpaca-format i
 - Coordinates **Generator → Critic → Refiner** agents through shared state
 - Uses task-aware grading for code, reasoning, explanation, and creative tasks
 - Adds Tavily-based RAG fact checking and structured revision feedback
-- End-to-end result: **9.5/10**, 2 refinement iterations, **10 verified facts with 0 contradictions**
-- Fixed heterogeneous LLM feedback parsing with Pydantic-compatible normalization
+- Adds Best-of-N comparison, rollback control, complexity evolution, and Pydantic-compatible feedback normalization
+- Result: average quality **8.83 → 9.10**, scoring variance **±1.0 → ±0.2**, factual accuracy **85% → 95%**
 
 `Python` `LangGraph` `LangChain` `RAG` `Pydantic` `Tavily`
 
@@ -25,7 +25,7 @@ Single-GPU implementation of retrieval-augmented fine-tuning and PPO alignment o
 - Built a complete **RAFT-SFT → PPO → unified evaluation** pipeline on one RTX 4090
 - Fixed TRL 0.7.4's PEFT reference-policy path by explicitly loading and freezing the SFT reference model
 - Added conservative PPO controls, length-aware rewards, high-KL early stopping, parameter checks, and configurable evaluation
-- Result: PPO reached **0.826** versus **0.360** for Base (`+129.4%`), with observed KL around `-0.6–0.6`
+- Result: RAFT-SFT reached **0.856** and PPO reached **0.779**, versus **0.360** for Base
 
 `PyTorch` `Transformers` `PEFT` `QLoRA` `TRL` `PPO` `RAFT`
 
