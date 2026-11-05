@@ -6,28 +6,27 @@ Data Science master's student at Nankai University, focused on **LLM agents, RAG
 
 ## Featured projects
 
-### [MLangChain](https://github.com/xyz-xyz111/MLangChain)
-
-LangGraph-based multi-agent pipeline for generating and refining Alpaca-format instruction data.
-
-- Coordinates **Generator → Critic → Refiner** agents through shared state
-- Uses task-aware grading for code, reasoning, explanation, and creative tasks
-- Adds Tavily-based RAG fact checking and structured revision feedback
-- End-to-end result: **9.5/10**, 2 refinement iterations, **10 verified facts with 0 contradictions**
-- Fixed heterogeneous LLM feedback parsing with Pydantic-compatible normalization
-
-`Python` `LangGraph` `LangChain` `RAG` `Pydantic` `Tavily`
-
 ### [NanoRAFT-RL](https://github.com/xyz-xyz111/NanoRAFT-RL)
 
 Single-GPU implementation of retrieval-augmented fine-tuning and PPO alignment on Qwen2-7B.
 
-- Built a complete **RAFT-SFT → PPO → unified evaluation** pipeline on one RTX 4090
+- Fork engineering focus: stable PPO training and configurable evaluation on one RTX 4090
 - Fixed TRL 0.7.4's PEFT reference-policy path by explicitly loading and freezing the SFT reference model
-- Added conservative PPO controls, length-aware rewards, high-KL early stopping, parameter checks, and configurable evaluation
+- Added conservative PPO controls, length-aware rewards, high-KL early stopping, parameter checks, and CLI evaluation options
 - Result: PPO reached **0.826** versus **0.360** for Base (`+129.4%`), with observed KL around `-0.6–0.6`
 
 `PyTorch` `Transformers` `PEFT` `QLoRA` `TRL` `PPO` `RAFT`
+
+### [MLangChain](https://github.com/xyz-xyz111/MLangChain)
+
+LangGraph-based multi-agent pipeline for generating and refining Alpaca-format instruction data.
+
+- Fork engineering focus: heterogeneous LLM feedback normalization and end-to-end workflow validation
+- Added Pydantic-compatible handling for string, dictionary, list, and nested Critic feedback
+- Preserved structured `location / problem / suggestion` information for targeted refinement
+- Result: **9.5/10** after 2 iterations, with **10/10 facts verified and 0 contradictions**
+
+`Python` `LangGraph` `LangChain` `RAG` `Pydantic` `Tavily`
 
 ## Technical interests
 
