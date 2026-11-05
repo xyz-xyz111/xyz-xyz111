@@ -10,10 +10,11 @@ Data Science master's student at Nankai University, focused on **LLM agents, RAG
 
 LangGraph-based multi-agent pipeline for generating and refining Alpaca-format instruction data.
 
-- Connected the **Generator → Critic → Refiner** workflow with Tavily-based fact checking
-- Fixed heterogeneous LLM feedback parsing with Pydantic-compatible state normalization
-- Preserved structured `location / problem / suggestion` feedback for targeted revisions
-- Result: **9.5/10** after 2 refinement iterations, with **10/10 facts verified and 0 contradictions**
+- Coordinates **Generator → Critic → Refiner** agents through shared state
+- Uses task-aware grading for code, reasoning, explanation, and creative tasks
+- Adds Tavily-based RAG fact checking and structured revision feedback
+- End-to-end result: **9.5/10**, 2 refinement iterations, **10 verified facts with 0 contradictions**
+- Fixed heterogeneous LLM feedback parsing with Pydantic-compatible normalization
 
 `Python` `LangGraph` `LangChain` `RAG` `Pydantic` `Tavily`
 
@@ -21,10 +22,11 @@ LangGraph-based multi-agent pipeline for generating and refining Alpaca-format i
 
 Single-GPU implementation of retrieval-augmented fine-tuning and PPO alignment on Qwen2-7B.
 
-- Implemented RAFT data construction with relevant evidence and distractor documents
-- Built a 4-bit **RAFT-SFT → PPO → unified evaluation** pipeline for one RTX 4090
-- Fixed TRL 0.7.4's PEFT reference-policy path and kept observed KL near zero (`-0.6–0.6`)
-- Result: RAFT-SFT reached **0.838** and PPO reached **0.826**, versus **0.360** for Base
+- Builds RAFT samples with relevant evidence and distractor documents
+- Runs a complete **RAFT-SFT → PPO → unified evaluation** pipeline on one RTX 4090
+- RAFT-SFT score: **0.360 → 0.838** (`+132.8%` over Base)
+- Stabilized TRL 0.7.4's PEFT reference policy, keeping observed KL near zero (`-0.6–0.6`)
+- PPO score: **0.826** with an average response length of **614**
 
 `PyTorch` `Transformers` `PEFT` `QLoRA` `TRL` `PPO` `RAFT`
 
