@@ -25,8 +25,8 @@ Single-GPU reproduction of retrieval-augmented fine-tuning and PPO alignment on 
 - Builds RAFT samples with relevant evidence and distractor documents
 - Runs a complete **RAFT-SFT → PPO → unified evaluation** pipeline on one RTX 4090
 - RAFT-SFT score: **0.360 → 0.838** (`+132.8%` over Base)
-- Diagnosed TRL 0.7.4's PEFT reference-policy issue and reduced KL from roughly **30–135 to -0.6–0.6**
-- Improved PPO score from **0.410 to 0.826**, while reducing average response length from **1001 to 614**
+- Stabilized TRL 0.7.4's PEFT reference policy, keeping observed KL near zero (`-0.6–0.6`)
+- PPO score: **0.826** with an average response length of **614**
 
 `PyTorch` `Transformers` `PEFT` `QLoRA` `TRL` `PPO` `RAFT`
 
