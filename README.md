@@ -10,7 +10,7 @@ Data Science master's student at Nankai University, focused on **LLM agents, RAG
 
 Single-GPU implementation of retrieval-augmented fine-tuning and PPO alignment on Qwen2-7B.
 
-- Fork engineering focus: stable PPO training and configurable evaluation on one RTX 4090
+- Engineering focus: stable PPO training and configurable evaluation on one RTX 4090
 - Fixed TRL 0.7.4's PEFT reference-policy path by explicitly loading and freezing the SFT reference model
 - Added conservative PPO controls, length-aware rewards, high-KL early stopping, parameter checks, and CLI evaluation options
 - Result: PPO reached **0.826** versus **0.360** for Base (`+129.4%`), with observed KL around `-0.6–0.6`
@@ -21,7 +21,7 @@ Single-GPU implementation of retrieval-augmented fine-tuning and PPO alignment o
 
 LangGraph-based multi-agent pipeline for generating and refining Alpaca-format instruction data.
 
-- Fork engineering focus: heterogeneous LLM feedback normalization and end-to-end workflow validation
+- Engineering focus: heterogeneous LLM feedback normalization and end-to-end workflow validation
 - Added Pydantic-compatible handling for string, dictionary, list, and nested Critic feedback
 - Preserved structured `location / problem / suggestion` information for targeted refinement
 - Result: **9.5/10** after 2 iterations, with **10/10 facts verified and 0 contradictions**
