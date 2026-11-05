@@ -22,11 +22,10 @@ LangGraph-based multi-agent pipeline for generating and refining Alpaca-format i
 
 Single-GPU implementation of retrieval-augmented fine-tuning and PPO alignment on Qwen2-7B.
 
-- Builds RAFT samples with relevant evidence and distractor documents
-- Runs a complete **RAFT-SFT → PPO → unified evaluation** pipeline on one RTX 4090
-- RAFT-SFT score: **0.360 → 0.838** (`+132.8%` over Base)
-- Stabilized TRL 0.7.4's PEFT reference policy, keeping observed KL near zero (`-0.6–0.6`)
-- PPO score: **0.826** with an average response length of **614**
+- Extended the original RAFT-SFT workflow into a complete **RAFT-SFT → PPO → unified evaluation** pipeline on one RTX 4090
+- Fixed TRL 0.7.4's PEFT reference-policy path by explicitly loading and freezing the SFT reference model
+- Added conservative PPO controls, length-aware rewards, high-KL early stopping, parameter checks, and configurable evaluation
+- Result: PPO reached **0.826** versus **0.360** for Base (`+129.4%`), with observed KL around `-0.6–0.6`
 
 `PyTorch` `Transformers` `PEFT` `QLoRA` `TRL` `PPO` `RAFT`
 
