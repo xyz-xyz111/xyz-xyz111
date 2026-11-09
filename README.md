@@ -4,7 +4,7 @@ Data Science master's student at Nankai University, focused on **LLM agents, RAG
 
 目前专注于大模型应用与训练工程，正在寻找 **AI / LLM 算法实习机会**。
 
-📄 [下载中文简历](./resume/石奇生-南开大学28毕业-可尽快到岗实习-每周可出勤五天-可连续实习六个月以上.pdf)
+📄 [下载中文简历](./resume/石奇生-南开大学28毕业-可立即到岗实习-每周可出勤五天-可连续实习六个月以上.pdf)
 
 ## Featured projects
 
